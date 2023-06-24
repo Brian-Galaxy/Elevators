@@ -1,0 +1,431 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{CFB6BA7A-86EB-4DCD-9330-BBF5CD2D3D4C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Elevators</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Elevators</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="Audio\Blues_Brothers.wav" />
+    <Content Include="Audio\ElevatorDing-SoundBible.com-685385892.wav" />
+    <Content Include="Audio\ElevatorMusic1.wav" />
+    <Content Include="Audio\ElevatorMusic2.wav" />
+    <Content Include="Audio\Jingle_Bells.wav" />
+    <Content Include="Audio\Left_Bank_Two.wav" />
+    <Content Include="Audio\Mass_Effect_Elevator_Music.wav" />
+    <Content Include="Audio\Psi-Ops_Elevator_Music.wav" />
+    <Content Include="metadata.mod" />
+    <Content Include="Textures\GUI\Icons\Cubes\VCZ_Elevator_Bottom_Icon.dds" />
+    <Content Include="Textures\GUI\Icons\Cubes\VCZ_Elevator_Filler_Vent_Icon.dds" />
+    <Content Include="Textures\GUI\Icons\Cubes\VCZ_Elevator_Icon.dds" />
+    <Content Include="Textures\GUI\Icons\Cubes\VCZ_Elevator_Middle_Icon.dds" />
+    <Content Include="Textures\GUI\Icons\Cubes\VCZ_Elevator_Top_Icon.dds" />
+    <Content Include="Textures\Models\Cubes\Black_cm.dds" />
+    <Content Include="Textures\Models\Cubes\Emergency_Stop_cm.dds" />
+    <Content Include="Textures\Models\Cubes\Emissive_add.dds" />
+    <Content Include="Textures\Models\Cubes\Emissive_cm.dds" />
+    <Content Include="Thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\FETCH_HEAD" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\heads\test" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\logs\refs\remotes\origin\test" />
+    <None Include=".git\objects\00\321124c5ea642be5a12ee325977d1253fa0c50" />
+    <None Include=".git\objects\00\b1c494efd455013cbfe34e7976ad9b8fdf0a4e" />
+    <None Include=".git\objects\02\40fddc1e016442302a2921614a6a9747ba4675" />
+    <None Include=".git\objects\03\b0a01cc506ff9c56e58a67b97a61a68f39e696" />
+    <None Include=".git\objects\07\da7b11e8b9e842dd9a24b56b8a588169fd25e9" />
+    <None Include=".git\objects\0a\020fdf099056cfdfb5f0f4351688f40b8d186e" />
+    <None Include=".git\objects\0c\dd0b00871f4e7ad4fc5e7de6e2c28fe655b1aa" />
+    <None Include=".git\objects\0d\c3b439e9ccd123cf2e777efc6b1269cb41def3" />
+    <None Include=".git\objects\0d\c886f7c0472a27f5595f860a993bd35495c6d1" />
+    <None Include=".git\objects\12\7d2b885e1873898f3a787ba0d692e5a74f5745" />
+    <None Include=".git\objects\12\eb290437570a4e3a6b04b901b47d7c2b92b5e7" />
+    <None Include=".git\objects\14\82faf8c4defcf2c9fdcf5ba3fb89a5a23d91d2" />
+    <None Include=".git\objects\1b\4220d2152c0c0cb7a336a22fda39faf215cf0f" />
+    <None Include=".git\objects\1e\26419e75094c1de1cd6261caba937d4ac05eb4" />
+    <None Include=".git\objects\1e\54082705e75a9e4ef81f2efae1eee79dc69446" />
+    <None Include=".git\objects\1e\71a9a3960c36fbd27c19455ea9fc33f57c7797" />
+    <None Include=".git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include=".git\objects\20\510ecaa7bd4ca61957ed9908953978a3ae5768" />
+    <None Include=".git\objects\22\f95016b25c8fa90439d0af1a26c7fc4d721bcb" />
+    <None Include=".git\objects\23\4faaec9b7fc5dac162caa649cf4c8105e9849d" />
+    <None Include=".git\objects\27\6f84745669d98dddfa40ca9e7b38bdc0ae7236" />
+    <None Include=".git\objects\32\53fc08e3169e84149033d8880d79f301e2be2b" />
+    <None Include=".git\objects\33\008d7dfb35bb1db3d2630ef93809bb05f082f5" />
+    <None Include=".git\objects\33\9380303e7eb40f2b9e336d999e8614d5dd0eae" />
+    <None Include=".git\objects\33\d3f720c2344079154163b521e4dbe989a0a7aa" />
+    <None Include=".git\objects\36\625b9d42bcd628a2eeddbde9e0efe17add19dd" />
+    <None Include=".git\objects\37\94dc751ae2cb9575ea50ad34bd1d743b7ac3e7" />
+    <None Include=".git\objects\39\fcdc11298e0fa5f57fbaf56210bedfdf711a79" />
+    <None Include=".git\objects\3b\d7e8848d7778b796b978bd959a0be314b1fa41" />
+    <None Include=".git\objects\3d\77dec8cc574f9a1f3a9baaf7f4d8f61e0661e6" />
+    <None Include=".git\objects\3f\db353808f11e02978b7c0d407fcac9c1d43ed0" />
+    <None Include=".git\objects\49\76e2c81f2c748396d33537befd4fe75521cef5" />
+    <None Include=".git\objects\4a\dd09a1b251f968d39ce30f7115020772e03c0a" />
+    <None Include=".git\objects\4b\b81ed75ecf1abdfbcced83dd3fa1a54d136274" />
+    <None Include=".git\objects\4d\34e952e63d8d6baecf0dff5e806e7768db847e" />
+    <None Include=".git\objects\4e\a4cfdbc1ca6051ea2af5eae18a74eeb9d3cb37" />
+    <None Include=".git\objects\50\0498746afaa867aa2a81def35177e710544e26" />
+    <None Include=".git\objects\53\9eed6c0cb66d4cb873cbe11b172b76c673d7d8" />
+    <None Include=".git\objects\57\923345a748cc0840a61c57708561dfbe409731" />
+    <None Include=".git\objects\59\a27963cbc3cf2a6ebc1f697edcafd33e12161c" />
+    <None Include=".git\objects\60\f3aad95a67895ac2dac71e1de86e1982f75e83" />
+    <None Include=".git\objects\63\ded526dff91468fa221dcd69c99bd39d14edda" />
+    <None Include=".git\objects\66\bde49526a1dd3e09e9e7354824f6e9dda0e04e" />
+    <None Include=".git\objects\66\c8084eca55bd622afd903dedc891131026a863" />
+    <None Include=".git\objects\68\da72f66bd166f3e7b67a1744373c50b0199b4a" />
+    <None Include=".git\objects\6a\426cece783643a6ce24b515821306efea7ee86" />
+    <None Include=".git\objects\6d\ff0a101a2297e0e1b1b17a4e1c51e56c0c7c95" />
+    <None Include=".git\objects\6e\c445df0d77d8dd1480c8d165a863e33fcc6b3b" />
+    <None Include=".git\objects\71\c2923a02a4bbb50f819196bd72d5af539312f9" />
+    <None Include=".git\objects\72\06b03fa15945f75fc3ea824d4f16ef0dd15c3f" />
+    <None Include=".git\objects\73\6703990495fc296f7049fd46e55d3d02706fc4" />
+    <None Include=".git\objects\78\cbe12d0f9e6dc3ed25f57bb63ba948ddd7c94b" />
+    <None Include=".git\objects\79\58066b56451ae662063adf404b96168c021748" />
+    <None Include=".git\objects\79\d45122b1f7d85468e752a884f2e794614f9ac0" />
+    <None Include=".git\objects\7b\2ecfe10a52cc557c3acd89075d159e691cd94a" />
+    <None Include=".git\objects\7b\de364c6f57b7a9541a8147152057e56525e8c8" />
+    <None Include=".git\objects\7c\bc812804cd73e854312d3a52efa498d84255fc" />
+    <None Include=".git\objects\7e\e8072bfbb9535099967c40a0d164c2ceaf349d" />
+    <None Include=".git\objects\84\0027b7c22143ea5ff7b9ddfc7020f7d0ec1d91" />
+    <None Include=".git\objects\84\2a7c5b18d872173c84cd854108e5590dc1391c" />
+    <None Include=".git\objects\84\f013001f9044b0a5f8f2d85d9a0df253c85d47" />
+    <None Include=".git\objects\87\5c59acef6e8fc0e24a8b6c8ff426c3c38266a0" />
+    <None Include=".git\objects\8b\3bd008af59de87a6e0b5c28c3326df7bb820d1" />
+    <None Include=".git\objects\90\85d3c6bc58a79e4b58a4df008d65334fa79bfc" />
+    <None Include=".git\objects\94\91a2fda28342ab358eaf234e1afe0c07a53d62" />
+    <None Include=".git\objects\94\e42f7ceea493a28dd27d715a71b2c4300ee49b" />
+    <None Include=".git\objects\97\47d6c0816f841984c7372bcea657bde766ad8f" />
+    <None Include=".git\objects\98\6ba6fb24d49bd6ae1b202f2f0dbed9c1919bbf" />
+    <None Include=".git\objects\9a\f382a48d195d5621c4ee19f00f53cbd4b92ca5" />
+    <None Include=".git\objects\9d\17fc29d0b16d05152e61cb8ad01b4bf1246678" />
+    <None Include=".git\objects\9d\68d1a6aa827cd6e3b6e12dae5a455a9ad1259a" />
+    <None Include=".git\objects\a3\fb52496819bb8f5ae8470bb8fcb45e4cca5076" />
+    <None Include=".git\objects\a5\3dcd4d636be012a5946d7fd305b81f7b180ee3" />
+    <None Include=".git\objects\a8\9beeb2b64228b52afd49a022503dfcfa389d89" />
+    <None Include=".git\objects\ab\f6e1cde8bdbbaeea186427f65bd97fea87a519" />
+    <None Include=".git\objects\b1\d9049c9ac75a1fb132af681834144e23cf269d" />
+    <None Include=".git\objects\b3\a8d797d1c42dced753057aa69f8c85ff688922" />
+    <None Include=".git\objects\b8\3d09422a935ed4ce1ed1106b3638a552167e36" />
+    <None Include=".git\objects\b9\435b4684f54d155d1d67fd1c8aaebd5477c883" />
+    <None Include=".git\objects\bb\83474a296bcd61ac637fe4d4ae1e9a7a67e604" />
+    <None Include=".git\objects\bd\e56c998769ebd0fe1dc4aba593d044023f4e94" />
+    <None Include=".git\objects\bf\9faa617a2c4e7b43d5ca3c23d36edadca9899f" />
+    <None Include=".git\objects\c3\b336e09d4c3e8012172785f81fda06c0673443" />
+    <None Include=".git\objects\ca\48a533389b840976d2cd247d28d7e97f080e91" />
+    <None Include=".git\objects\cb\1eb837c6a52eb83c53332f9e07cb2684152e2b" />
+    <None Include=".git\objects\cc\a8448b981dc7d95cd4af64742ed427c6c88590" />
+    <None Include=".git\objects\cf\aa5ee0c6f6c327266cc3aa3bb46ecdb2f89f0a" />
+    <None Include=".git\objects\d1\43dcb96f2ed36a7c34a2c9ade55ed0744ef96c" />
+    <None Include=".git\objects\d1\9fa3d09921664e0bd3ff3c4d709b7ab7b9e65e" />
+    <None Include=".git\objects\d4\ccf631d22cf9e3561849ebd25c661d3fd3a4bf" />
+    <None Include=".git\objects\d5\01d50123f26582e08400dc151bbe056c1e720f" />
+    <None Include=".git\objects\da\f21f30c7d941f657b6a010a9a303780db4ddf1" />
+    <None Include=".git\objects\e0\30204664327291ecbeaf754325109d57685787" />
+    <None Include=".git\objects\e0\93b582c647bf374ff303fd827f6d876e2f1a74" />
+    <None Include=".git\objects\e3\35877a45aa6394ce772ff5c0d4355f835c4c2e" />
+    <None Include=".git\objects\e6\1ee5c1ef0f2cdea984cfc2663a955150620323" />
+    <None Include=".git\objects\ea\6eddd37be2fd7431af112bec9a369af20f87e2" />
+    <None Include=".git\objects\eb\8e5bbd7aa580be709d3f4ed93ff23f656d95d9" />
+    <None Include=".git\objects\ed\5f5d53d9758af2c5800ec877f19cfa9008505d" />
+    <None Include=".git\objects\ef\541cfdb6c3010e5f16695f958f8854cf66400b" />
+    <None Include=".git\objects\f0\d3a70ceaa69fb70811f58254dc738e0f939eac" />
+    <None Include=".git\objects\f8\94c1f5f44c178a301ec3e553be91e823bfb3a3" />
+    <None Include=".git\objects\f9\80a37fd4b568cee900f9cf01a81151920910c1" />
+    <None Include=".git\objects\fc\2b4986298b1723d10cdfeb0c39e54533b5c248" />
+    <None Include=".git\objects\ff\97cb41fcb4236943f41a8fee0978f11f03e81a" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\heads\test" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".git\refs\remotes\origin\test" />
+    <None Include=".vs\Elevators\FileContentIndex\3515d186-f833-4f1f-bfd6-98dd32d5c5a5.vsidx" />
+    <None Include=".vs\Elevators\FileContentIndex\c000acf2-ce91-4ae9-a144-62b5591f20a2.vsidx" />
+    <None Include=".vs\Elevators\FileContentIndex\read.lock" />
+    <None Include=".vs\Elevators\v17\.wsuo" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="app.config" />
+    <None Include="Data\Audio.sbc" />
+    <None Include="Data\BlockCategories.sbc" />
+    <None Include="Data\BlueprintClasses.sbc" />
+    <None Include="Data\CubeBlocks_VCZ_MultifloorElevator.sbc" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Buttons.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_ChristmasLights.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Door.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_FillerDouble.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_FillerDouble_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_FillerDouble_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler_Vent.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler_Vent_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Filler_Vent_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Bottom.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Bottom_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Bottom_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle_Double.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle_Double_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Middle_Double_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Top.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Top_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Floor_Top_Constr2.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Rotor.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Rotor_Base.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Rotor_Base_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Rotor_Constr1.mwm" />
+    <None Include="Models\Cubes\Large\VCZ_Elevator_Rotor_Top.mwm" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Cabin.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Elevator.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Floor.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Floors.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Passenger.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Classes\Passengers.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\RemoveVoxels.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\Session.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\Communication.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\CustomControls.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\IDs.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\Logging.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\ReadValue.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\SetDigit.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\TerminalHelpers.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\StaticHelpers\Utilities.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\VCZ_MultifloorElevator.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\VCZ_MultifloorElevator_Buttons.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\VCZ_MultifloorElevator_Floors.cs" />
+    <Compile Include="Data\Scripts\MultifloorElevator\VCZ_MultifloorElevator_Top.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include=".vs\Elevators\FileContentIndex\merges\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\AnselSDK64.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\CppNet.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\d3dcompiler_47.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\d3dcsx_47.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\D3DX9_43.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\DirectShowLib.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\EmptyKeys.UserInterface.Core.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\EmptyKeys.UserInterface.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\EOSSDK-Shipping.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\EOSSDK.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\GameAnalytics.Mono.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\GFSDK_Aftermath_Lib.x64.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Havok.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\HavokWrapper.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Microsoft.CodeAnalysis.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\msvcp110.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\msvcp120.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\msvcr110.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\msvcr120.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\netstandard.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\NLog.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\opus.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\ProtoBuf.Net.Core.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\ProtoBuf.Net.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\RecastDetour.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\RecastDetourWrapper.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\RestSharp.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Graphics.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.RenderDirect.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.D3DCompiler.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.Desktop.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.Direct3D11.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.DirectInput.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.DXGI.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.XAudio2.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SharpDX.XInput.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SixLabors.Core.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SixLabors.ImageSharp.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Steamworks.NET.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\steam_api64.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Buffers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Collections.Immutable.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.ComponentModel.Annotations.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Data.SQLite.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Memory.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Numerics.Vectors.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Reflection.Metadata.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Text.Encoding.CodePages.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\System.Threading.Tasks.Extensions.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Ansel.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Audio.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Audio.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.EOS.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.EOS.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.EOS.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.EOS.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Input.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Input.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Mod.Io.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Mod.Io.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Native.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Native.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.NativeAftermath.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.NativeAftermath.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.NativeWrapper.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.NativeWrapper.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Network.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Network.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Platform.Windows.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Platform.Windows.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render11.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render11.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Scripting.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Scripting.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Steam.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Steam.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.UserInterface.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.UserInterface.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.XmlSerializers.dll" />
+    <Analyzer Include="D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.XmlSerializers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sandbox.Common">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sandbox.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="SpaceEngineers.ObjectBuilders">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.EOS">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.EOS.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Game">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Library">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Math">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Mod.Io">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Mod.Io.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Network">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Render">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Render.dll</HintPath>
+    </Reference>
+    <Reference Include="VRage.Scripting">
+      <HintPath>D:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\VRage.Scripting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
