@@ -80,7 +80,7 @@ namespace Vicizlat.MultifloorElevator
 
         public void CheckPower()
         {
-            IsPowered = Block.ResourceSink.IsPowerAvailable(MyResourceDistributorComponent.ElectricityId, 0.10f);
+            IsPowered = Block.ResourceSink.SuppliedRatioByType(MyResourceDistributorComponent.ElectricityId) == 1;
             if (IsPowered != oldIsPowered) Block.RefreshCustomInfo();
             JustGotPower = IsPowered != oldIsPowered && IsPowered;
             oldIsPowered = IsPowered;
