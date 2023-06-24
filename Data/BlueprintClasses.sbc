@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<BlueprintClassEntries>
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="AdvancedDoor/VCZ_Elevator_Bottom" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="MotorAdvancedStator/VCZ_Elevator_Rotor" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="MotorAdvancedStator/VCZ_Elevator_Rotor_Base" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="AdvancedDoor/VCZ_Elevator_Middle" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="AdvancedDoor/VCZ_Elevator_Middle_Double" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="AdvancedDoor/VCZ_Elevator_Top" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="UpgradeModule/VCZ_Elevator_Filler" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="UpgradeModule/VCZ_Elevator_FillerDouble" />
+		<Entry Class="LargeBlocks" BlueprintSubtypeId="AirVent/VCZ_Elevator_Filler_Vent" />
+	</BlueprintClassEntries>
+</Definitions>

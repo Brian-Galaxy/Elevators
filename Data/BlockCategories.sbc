@@ -1,0 +1,24 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CategoryClasses>
+		<Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+			<Id>
+				<TypeId>GuiBlockCategoryDefinition</TypeId>
+				<SubtypeId/>
+			</Id>
+			<DisplayName>VCZ Mod Blocks</DisplayName>
+			<Name>VCZ_Mod_Blocks</Name>
+			<ItemIds>
+				<string>AdvancedDoor/VCZ_Elevator_Bottom</string>
+				<string>MotorAdvancedStator/VCZ_Elevator_Rotor</string>
+				<string>MotorAdvancedStator/VCZ_Elevator_Rotor_Base</string>
+				<string>AdvancedDoor/VCZ_Elevator_Middle</string>
+				<string>AdvancedDoor/VCZ_Elevator_Middle_Double</string>
+				<string>AdvancedDoor/VCZ_Elevator_Top</string>
+				<string>UpgradeModule/VCZ_Elevator_Filler</string>
+				<string>UpgradeModule/VCZ_Elevator_FillerDouble</string>
+				<string>AirVent/VCZ_Elevator_Filler_Vent</string>
+			</ItemIds>
+		</Category>
+	</CategoryClasses>
+</Definitions>
