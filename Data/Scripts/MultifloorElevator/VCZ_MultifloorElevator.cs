@@ -295,8 +295,6 @@ namespace Vicizlat.MultifloorElevator
             if (!Elevator_Block.CustomData.Contains("CabinLightRange")) Elevator_Block.CustomData += $"\nCabinLightRange[{CabinLightRange}]";
             CabinLightIntensity = ReadValue.GetNumberFloat(Elevator_Block.CustomData, "CabinLightIntensity", 2);
             if (!Elevator_Block.CustomData.Contains("CabinLightIntensity")) Elevator_Block.CustomData += $"\nCabinLightIntensity[{CabinLightIntensity}]";
-            ShowChristmasLights = ReadValue.GetBool(Elevator_Block.CustomData, "ShowChristmasLights");
-            if (!Elevator_Block.CustomData.Contains("ShowChristmasLights")) Elevator_Block.CustomData += $"\nShowChristmasLights[{ShowChristmasLights}]";
         }
     }
 }
