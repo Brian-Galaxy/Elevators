@@ -25,7 +25,7 @@ namespace Vicizlat.MultifloorElevator
 
         public override void Close() => NeedsUpdate = MyEntityUpdateEnum.NONE;
 
-        public override void UpdateOnceBeforeFrame()
+        public override void UpdateOnceBeforeFrame() //I think this is the start function?
         {
             try
             {
@@ -43,12 +43,16 @@ namespace Vicizlat.MultifloorElevator
                 Logging.Instance.WriteException(e.Message, e.StackTrace);
             }
         }
-
+        
         public override void UpdateBeforeSimulation()
         {
             try
             {
-                if (!ElevatorTop.IsFunctional) ElevatorTop.SlimBlock.IncreaseMountLevel(1f, ElevatorTop.Base.OwnerId);
+                if (!ElevatorTop.IsFunctional)
+                {
+                    ElevatorTop.SlimBlock.IncreaseMountLevel(1f, ElevatorTop.Base.OwnerId);
+                }
+
                 if (!MyAPIGateway.Utilities.IsDedicated && ElevatorTop.CubeGrid.Physics != null && MyAPIGateway.Session.Player.Character != null && !MyAPIGateway.Session.Player.Character.IsDead)
                 {
                     if (Cabin != null && Cabin.Block != null && !Cabin.Block.Closed)
@@ -60,11 +64,15 @@ namespace Vicizlat.MultifloorElevator
                         }
                         else
                         {
+                            //TODO Rotate elevator cabin to match instead of removing it
                             ElevatorTop.CubeGrid.RazeBlock(ElevatorTop.Position + (Vector3I)ElevatorTop.LocalMatrix.Up);
                             ElevatorTop.CubeGrid.RazeBlock(ElevatorTop.Position);
                         }
                     }
-                    else Cabin = new Cabin(ElevatorTop);
+                    else
+                    {
+                        Cabin = new Cabin(ElevatorTop);
+                    }
                 }
             }
             catch (Exception e)

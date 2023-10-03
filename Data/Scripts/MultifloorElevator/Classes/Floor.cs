@@ -3,6 +3,7 @@ using Sandbox.Game.Entities.Character.Components;
 using Sandbox.ModAPI;
 using VRage.Game.Components;
 using VRageMath;
+using VRage.Game.Components.Interfaces;
 
 namespace Vicizlat.MultifloorElevator
 {
@@ -119,8 +120,8 @@ namespace Vicizlat.MultifloorElevator
                 Block.OpenDoor();
             }
         }
-
-        public void HandlePlayerInput(MyEntityComponentContainer characterCompContainer)
+		
+        public void HandlePlayerInput(IMyEntityComponentContainer characterCompContainer)
         {
             if (!IsClosed || !ElevatorGameLogic.ElevatorEnabled || MyAPIGateway.Gui.ActiveGamePlayScreen != null) return;
             if (characterCompContainer.Get<MyCharacterDetectorComponent>()?.UseObject == null || characterCompContainer.Get<MyCharacterDetectorComponent>().DetectedEntity != Block) return;

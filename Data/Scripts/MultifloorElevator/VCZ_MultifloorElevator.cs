@@ -91,15 +91,11 @@ namespace Vicizlat.MultifloorElevator
 
         private bool GridIsRotating()
         {
-            if (!Elevator_Block.CubeGrid.IsStatic && Elevator_Block.CubeGrid.Physics.AngularVelocity.AbsMax() >= 1.5f)
-            {
-                if (!ElevatorStarted && !ShouldMoveElevator && Elevator_Block.Top != null) Passengers.GetPassengers(CabinMatrix, CabinPosition);
-                if (Passengers.Count <= 0)
-                {
-                    Elevator_Block.Detach();
-                    return true;
-                }
-            }
+            MatrixD baseMatrix = Elevator_Block.WorldMatrix;
+            MatrixD cabinMatrix = Elevator_Block.Top.WorldMatrix;
+            cabinMatrix.Up = baseMatrix.Up;
+            cabinMatrix.Forward = baseMatrix.Forward;
+            Elevator_Block.Top.CubeGrid.SetWorldMatrix(cabinMatrix);
             return false;
         }
 
@@ -295,6 +291,8 @@ namespace Vicizlat.MultifloorElevator
             if (!Elevator_Block.CustomData.Contains("CabinLightRange")) Elevator_Block.CustomData += $"\nCabinLightRange[{CabinLightRange}]";
             CabinLightIntensity = ReadValue.GetNumberFloat(Elevator_Block.CustomData, "CabinLightIntensity", 2);
             if (!Elevator_Block.CustomData.Contains("CabinLightIntensity")) Elevator_Block.CustomData += $"\nCabinLightIntensity[{CabinLightIntensity}]";
+            ShowChristmasLights = ReadValue.GetBool(Elevator_Block.CustomData, "ShowChristmasLights");
+            if (!Elevator_Block.CustomData.Contains("ShowChristmasLights")) Elevator_Block.CustomData += $"\nShowChristmasLights[{ShowChristmasLights}]";
         }
     }
 }

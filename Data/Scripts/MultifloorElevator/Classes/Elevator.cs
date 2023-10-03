@@ -71,9 +71,13 @@ namespace Vicizlat.MultifloorElevator
 
         public void CheckCabin()
         {
+            //TODO So in this script Block.Top is the actual cabin. When cabin is destroyed Block.Top is null
             CabinReady = Block.IsAttached;
             if (CabinReady != oldCabinReady) Block.RefreshCustomInfo();
-            if (!CabinReady && ElevatorSessionComp.IsDecisionMaker) Block.ApplyAction("Add Top Part");
+
+            //if (!CabinReady && ElevatorSessionComp.IsDecisionMaker) Block.ApplyAction("Add Top Part");
+            if (!CabinReady && ElevatorSessionComp.IsDecisionMaker) Block.Attach();
+
             JustGotCabin = CabinReady != oldCabinReady && CabinReady;
             oldCabinReady = CabinReady;
         }
@@ -112,7 +116,16 @@ namespace Vicizlat.MultifloorElevator
 
         private void InitialSetup()
         {
-            Block.GetProperty("ShareInertiaTensor").AsBool().SetValue(Block, false);
+			//This try catch is due to a bug where the ShareInertiaTensor sometimes does not exist depending on mod loadouts
+			try
+			{
+				Block.GetProperty("ShareInertiaTensor").AsBool().SetValue(Block, false);
+			}
+			catch(System.Exception e)
+			{
+				//Meh, this is probably fine.
+			}
+			
             Block.BrakingTorque = 100000000;
             Block.TargetVelocityRPM = 0;
             Block.Torque = 100000000;
